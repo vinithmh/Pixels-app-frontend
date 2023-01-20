@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 import Icon from "./icon";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from "./Input";
-import { signIn, signUp } from "../../actions/auth";
+import { signin, signup } from "../../actions/auth";
 
 import useStyles from "./styles";
 
@@ -25,7 +25,7 @@ function Auth() {
     lastName: "",
     email: "",
     password: "",
-    confirmPasswords: "",
+    confirmPassword: "",
   };
 
   const classes = useStyles();
@@ -37,14 +37,15 @@ function Auth() {
 
   const handleShowPassword = () =>
     setShowPassword((prevShowPassword) => !prevShowPassword);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
 
     if (isSignup) {
-      dispatch(signUp(formData, history));
+      dispatch(signup(formData, history));
     } else {
-      dispatch(signIn(formData, history));
+      dispatch(signin(formData, history));
     }
   };
   const handleChange = (e) => {
