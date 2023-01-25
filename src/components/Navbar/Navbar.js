@@ -39,7 +39,7 @@ function Navbar() {
           component={Link}
           to="/"
           className={classes.heading}
-          variant="h2"
+          variant="h3"
           align="center"
         >
           Pixels
@@ -48,7 +48,7 @@ function Navbar() {
           className={classes.image}
           src={memories}
           alt="memories"
-          height="60"
+          height="40"
         />
       </div>
 
